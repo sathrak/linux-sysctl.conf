@@ -1,26 +1,26 @@
-### KERNEL TUNING ###
+# KERNEL TUNING #
 
-# Maximizing I/O Throughput
-# Minimal preemption granularity for CPU-bound tasks:
-# (default: 1 msec#  (1 + ilog(ncpus)), units: nanoseconds)
+### Maximizing I/O Throughput
+#### Minimal preemption granularity for CPU-bound tasks:
+#### (default: 1 msec#  (1 + ilog(ncpus)), units: nanoseconds)
 kernel.sched_min_granularity_ns = 10000000
 
-# SCHED_OTHER wake-up granularity.
-# (default: 1 msec#  (1 + ilog(ncpus)), units: nanoseconds)
+#### SCHED_OTHER wake-up granularity.
+#### (default: 1 msec#  (1 + ilog(ncpus)), units: nanoseconds)
 #
-# This option delays the preemption effects of decoupled workloads
-# and reduces their over-scheduling. Synchronous workloads will still
-# have immediate wakeup/sleep latencies.
+#### This option delays the preemption effects of decoupled workloads
+#### and reduces their over-scheduling. Synchronous workloads will still
+#### have immediate wakeup/sleep latencies.
 kernel.sched_wakeup_granularity_ns = 15000000
 
-# Maximum System V IPC message size in bytes.
-# default(8192)
+#### Maximum System V IPC message size in bytes.
+#### default(8192)
 kernel.msgmax=8192
 
-# Number of system V IPC system-wide semaphore identifiers.
+#### Number of system V IPC system-wide semaphore identifiers.
 kernel.sem=250 256000 32 1024
 
-# Maximum number of bytes on a single System V IPC message queue.
+#### Maximum number of bytes on a single System V IPC message queue.
 kernel.msgmnb=65536
 
 # Displays the maximum number of threads possible system-wide.
